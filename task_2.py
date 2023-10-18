@@ -1,6 +1,7 @@
 import pandas as pd
 
-#ambiguous_terms = pd.read_csv("MSHCorpus/MSHCorpus/benchmark_mesh.txt", sep="\t")
+#Read the ambiguous terms to a list:
+
 with open("MSHCorpus/MSHCorpus/benchmark_mesh.txt", 'r') as file:
     ambiguous_terms = []
 
@@ -12,5 +13,11 @@ with open("MSHCorpus/MSHCorpus/benchmark_mesh.txt", 'r') as file:
         # Append the line to the list
         ambiguous_terms.append(values)
 
-# Print the list of lines 
+# Print the list of ambiguous words and their CUIs. 
 print(ambiguous_terms)
+#print(len(ambiguous_terms))
+
+#selecting 10 regular terms and 10 acronyms randomly
+regular_terms = ['Milk', 'Nursing', 'Glycoside', 'Borrelia', 'Crown', 'Crack', 'Ganglion', 'Lactation', 'Synapsis', 'veterinary' ]
+acronyms = ['PVC', 'OCD', 'HIV', 'EGG', 'cRNA', 'AA', 'EM', 'MAF', 'PR', 'SPR']
+
