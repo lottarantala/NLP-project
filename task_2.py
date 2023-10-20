@@ -49,14 +49,15 @@ def find_senses(word):
     data = load_arff_file(file, directory)
     #We are computing the sense from the first abstract of the dataset
     sentence = data["citation string"][0]
+    print("Sentence:")
     print(sentence)
     sense = get_semantic(sentence, word)
     return sense
 
 # selected 10 regular terms and 10 acronyms randomly
-regular_terms = ['Respiration', 'Nursing', 'Glycoside', 'Borrelia', 'Crown',
-                 'Crack', 'Ganglion', 'Lactation', 'Synapsis', 'veterinary']
-acronyms = ['PVC', 'HR', 'HIV', 'EGG', 'PEP', 'AA', 'EMS', 'TNT', 'PR', 'US']
+regular_terms = ['Cell', 'Nurse', 'Exercises', 'Borrelia', 'Digestive',
+                 'Crack', 'Coffee', 'Tolerance', 'Malaria', 'Radiation']
+acronyms = ['IP', 'HR', 'HIV', 'EGG', 'PEP', 'AA', 'Epi', 'TNT', 'PR', 'US']
 
 
 print("Regular terms:\n")
