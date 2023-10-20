@@ -1,4 +1,5 @@
 import pandas as pd
+from nltk.corpus import wordnet
 from task_1 import get_semantic
 import re
 import os
@@ -26,7 +27,7 @@ with open("MSHCorpus/MSHCorpus/benchmark_mesh.txt", 'r') as file:
 def find_file(word, directory):
     for file in os.listdir(directory):
         if file.startswith(word):
-            print(file)
+            #print(file)
             return file
 
 def load_arff_file(filename, directory):
@@ -46,17 +47,34 @@ def load_arff_file(filename, directory):
 def find_senses(word):
     file = find_file(word, directory)
     data = load_arff_file(file, directory)
-    #jatkuu...
+    #We are computing the sense from the first abstract of the dataset
+    sentence = data["citation string"][0]
+    print(sentence)
+    sense = get_semantic(sentence, word)
+    return sense
 
 # selected 10 regular terms and 10 acronyms randomly
-regular_terms = ['Milk', 'Nursing', 'Glycoside', 'Borrelia', 'Crown',
+regular_terms = ['Respiration', 'Nursing', 'Glycoside', 'Borrelia', 'Crown',
                  'Crack', 'Ganglion', 'Lactation', 'Synapsis', 'veterinary']
-acronyms = ['PVC', 'OCD', 'HIV', 'EGG', 'cRNA', 'AA', 'EM', 'MAF', 'PR', 'SPR']
+acronyms = ['PVC', 'HR', 'HIV', 'EGG', 'PEP', 'AA', 'EMS', 'TNT', 'PR', 'US']
 
-print("Regular terms:")
+
+print("Regular terms:\n")
 for word in regular_terms:
-    find_senses(word)
-
+    print("Word: ", word)
+    print("Synsets:")
+    synsets = wordnet.synsets(word)
+    for syn in synsets:
+        print(syn.definition())
+    print("Sense:" ,find_senses(word))
+    print("\n")
+print("#############################################################")
 print("Acronyms:")
 for word in acronyms:
-    find_senses(word)
+    print("Word: ", word)
+    print("Synsets:")
+    synsets = wordnet.synsets(word)
+    for syn in synsets:
+        print(syn.definition())
+    print("Sense:" ,find_senses(word))
+    print("\n")
