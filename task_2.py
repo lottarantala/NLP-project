@@ -24,6 +24,7 @@ with open("MSHCorpus/MSHCorpus/benchmark_mesh.txt", 'r') as file:
 # print(ambiguous_terms)
 # print(len(ambiguous_terms))
 ##TURHA LOPPUU
+
 def find_file(word, directory):
     for file in os.listdir(directory):
         if file.startswith(word):
@@ -59,7 +60,7 @@ regular_terms = ['Cell', 'Nurse', 'Exercises', 'Borrelia', 'Digestive',
                  'Crack', 'Coffee', 'Tolerance', 'Malaria', 'Radiation']
 acronyms = ['IP', 'HR', 'HIV', 'EGG', 'PEP', 'AA', 'Epi', 'TNT', 'PR', 'US']
 
-
+#printing the results
 print("Regular terms:\n")
 for word in regular_terms:
     print("Word: ", word)
