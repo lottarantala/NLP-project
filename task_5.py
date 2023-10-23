@@ -6,7 +6,7 @@ import numpy as np
 
 sentence = "I have been prescribed two important drugs today during my visit to clinic"
 
-# Removing stopwords
+# Remove stopwords
 stop_words = set(stopwords.words('english'))
 
 # Tokenize the sentence into words and remove stopwords
@@ -14,7 +14,7 @@ words = nltk.word_tokenize(sentence)
 filtered_words = [word for word in words if word.lower() not in stop_words]
 print(filtered_words)
 
-# Create a matrix to store the phonetic distances
+# Create matrix for phonetic distances
 phonetic_distance_matrix = np.zeros((len(filtered_words), len(filtered_words)))
 
 # Calculate the edit distance between Double Metaphone codes of each pair of words
