@@ -28,7 +28,10 @@ print("\nSimilarities:\n")
 
 print(f"Path similarity between cosine lesk and original lesk: {pywsd.similarity_by_path(cosLesk, origLesk)}")
 print(f"Path similarity between cosine lesk and adapted lesk: {pywsd.similarity_by_path(cosLesk, adaptedLesk)}")
-print(f"Path similarity between cosine lesk and simple lesk: {pywsd.similarity_by_path(cosLesk, simpleLesk)}\n")
+print(f"Path similarity between cosine lesk and simple lesk: {pywsd.similarity_by_path(cosLesk, simpleLesk)}")
+print(f"Path similarity between adapted lesk and simple lesk: {pywsd.similarity_by_path(adaptedLesk, simpleLesk)}")
+print(f"Path similarity between original lesk and adapted/simple lesk: {pywsd.similarity_by_path(origLesk, simpleLesk)}\n")
+
 
 print(f"Infocontent similarity between cosine lesk and original lesk: {pywsd.similarity_by_infocontent(cosLesk, origLesk, 'res')}")
 print(f"Infocontent similarity between cosine lesk and adapted lesk: {pywsd.similarity_by_infocontent(cosLesk, adaptedLesk, 'res')}")
@@ -38,3 +41,4 @@ print(f"Infocontent similarity between cosine lesk and simple lesk: {pywsd.simil
 # Highest lemma count
 highest_lemmacount = pywsd.max_lemma_count(target_word)
 print(f"Highest lemma count for the word 'drug': {highest_lemmacount}")
+print(highest_lemmacount.definition())
