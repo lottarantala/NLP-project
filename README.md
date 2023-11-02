@@ -11,7 +11,7 @@ There is an individual python file for every task.
 |   Task 3    | task_3.py |
 |   Task 4    | task_4.py |
 |   Task 5    | task_5.py |
-|   Task 6    | task_6.py |
+|   Task 7    | task_7.py |
 
 The tasks can be run just by running the python file normally
 
